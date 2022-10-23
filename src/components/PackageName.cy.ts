@@ -6,9 +6,9 @@ describe("<PackageName>", () => {
   });
 
   const packageNameSelector = "[data-cy=packageName_input]";
+
   it("stepper should default to null", () => {
     cy.mount(PackageName);
-
     cy.get(packageNameSelector).should("have.text", "");
   });
 
