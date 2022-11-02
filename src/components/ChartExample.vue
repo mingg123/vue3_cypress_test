@@ -27,6 +27,7 @@ import {
   LinearScale,
 } from "chart.js";
 import { defineComponent } from "vue";
+import * as dayjs from "dayjs";
 
 ChartJS.register(
   Title,
@@ -73,30 +74,6 @@ export default defineComponent({
     },
   },
   setup() {
-    // const Utils = ChartUtils.init();
-    // const NUM_POINTS = 100000;
-    // // Utils.srand(10);
-    //
-    // // const start = Utils.parseISODate("2021-04-01T00:00:00Z").toMillis();
-    // const pointData = [];
-    //
-    // for (let i = 0; i < NUM_POINTS; ++i) {
-    //   // Most data will be in the range [0, 20) but some rare data will be in the range [0, 100)
-    //   const max = Math.random() < 0.001 ? 100 : 20;
-    //   pointData.push({ x: start + i * 30000, y: 1 });
-    // }
-
-    // const data = {
-    //   datasets: [
-    //     {
-    //       borderWidth: 1,
-    //       data: pointData,
-    //       label: "Large Dataset",
-    //       radius: 0,
-    //     },
-    //   ],
-    // };
-
     const chartData = {
       labels: ["상점", "배너", "업적", "출석"],
       datasets: [
@@ -120,8 +97,16 @@ export default defineComponent({
             "rgb(153, 102, 255)",
             "rgb(201, 203, 207)",
           ],
-          // data: pointData,
-          data: ["2021", "2021", "2021", "2021"],
+          // data: [
+          //   { x: "2016-12-25", y: 20 },
+          //   { x: "2016-12-26", y: 10 },
+          // ],
+          data: [
+            [0, 15],
+            [1, 15],
+            [6, 12],
+            [3, 1],
+          ],
         },
       ],
     };
@@ -131,11 +116,11 @@ export default defineComponent({
       indexAxis: "y",
       scales: {
         y: {
-          type: "time",
-          time: {
-            unit: "year",
+          title: {
+            color: "rgb(255, 99, 132)",
           },
           ticks: {
+            beginAtZero: false,
             crossAlign: "far",
             autoSkip: true,
           },
