@@ -10,10 +10,16 @@ export const INITIAL_EVENTS: EventInput[] = [
     start: todayStr,
   },
   {
-    id: createEventId(),
-    title: "Timed event",
-    start: todayStr + "T12:00:00",
+    id: "2",
+    title: "Long Event",
+    start: "2022-12-02",
+    end: "2022-12-08",
   },
+  // {
+  //   id: createEventId(),
+  //   title: "Timed event",
+  //   start: todayStr + "T12:00:00",
+  // },
 ];
 
 export function createEventId() {

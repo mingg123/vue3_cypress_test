@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-    <ChartExample />
-    <!--    <DemoComponent />-->
+    <!--    <ChartExample />-->
+    <DemoComponent />
     <!--    <line-chart />-->
   </div>
 </template>
@@ -15,9 +15,9 @@ import DemoComponent from "@/components/DemoComponent.vue";
 export default defineComponent({
   name: "HelloWorld",
   components: {
-    // DemoComponent,
+    DemoComponent,
     // LineChart,
-    ChartExample,
+    // ChartExample,
   },
   props: {
     msg: String,
